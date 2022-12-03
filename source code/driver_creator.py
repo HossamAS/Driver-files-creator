@@ -40,22 +40,22 @@ def driver_File_hash_part(file_dict,file_insertion_index_dict,file_length_dict):
     temp="".join(file_dict["Astricks"])
     return "".join([temp,"".join(file_dict["Description"]),"".join(file_dict["Author"]),"".join(file_dict["Version"]),"".join(file_dict["Date"]),"".join(file_dict["History"]),temp])
 
-file_sample={"Astricks"   :["/","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","/","\\","\n"],
-             "Description":["/","*"," ","D","e","s","c","r","i","p","t","i","o","n"," ",":"," ","*","/","\\","\n"],
-             "Author"     :["/","*"," ","A","u","t","h","o","r"," "," "," "," "," "," ",":"," ","*","/","\\","\n"],
-             "Version"    :["/","*"," ","V","e","r","s","i","o","n"," "," "," "," "," ",":"," ","0",".","1","V","*","/","\\","\n"],
-             "Date"       :["/","*"," ","D","a","t","e"," "," "," "," "," "," "," "," ",":"," ","*","/","\\","\n"],
-             "History"    :["/","*"," ","H","i","s","t","o","r","y"," "," "," "," "," ",":"," ","0",".","1","V"," ","I","n","i","t","i","a","l"," ","C","r","e","a","t","i","o","n","*","/","\\","\n"]
+file_sample={"Astricks"   :["/","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","*","/","\n"],
+             "Description":["/","*"," ","D","e","s","c","r","i","p","t","i","o","n"," ",":"," ","*","/","\n"],
+             "Author"     :["/","*"," ","A","u","t","h","o","r"," "," "," "," "," "," ",":"," ","*","/","\n"],
+             "Version"    :["/","*"," ","V","e","r","s","i","o","n"," "," "," "," "," ",":"," ","0",".","1","V","*","/","\n"],
+             "Date"       :["/","*"," ","D","a","t","e"," "," "," "," "," "," "," "," ",":"," ","*","/","\n"],
+             "History"    :["/","*"," ","H","i","s","t","o","r","y"," "," "," "," "," ",":"," ","0",".","1","V"," ","I","n","i","t","i","a","l"," ","C","r","e","a","t","i","o","n","*","/","\n"]
 }
 
 guard_region=["\n\n\n\n#ifndef ","_H\n#define ","_H\n\n\n\n\n\n\n\n\n#endif"]
 
-file_sample_lengths={"Astricks"   :42,
-                     "Description":21,
-                     "Author"     :21,
-                     "Version"    :25,
-                     "Date"       :21,
-                     "History"    :42
+file_sample_lengths={"Astricks"   :41,
+                     "Description":20,
+                     "Author"     :20,
+                     "Version"    :24,
+                     "Date"       :20,
+                     "History"    :41
                      }
 
 file_sample_insertion_indeces={"Astricks"  :38,
@@ -70,13 +70,13 @@ file_sample["Author"].insert(file_sample_insertion_indeces["Author"],os.getlogin
 file_sample["Author"]="".join(file_sample["Author"])
 file_sample["Author"]=list(file_sample["Author"])
 file_sample_lengths["Author"]=len(file_sample["Author"])
-file_sample_insertion_indeces["Author"]=file_sample_lengths["Author"]-4
+file_sample_insertion_indeces["Author"]=file_sample_lengths["Author"]-3
 
 file_sample["Date"].insert(file_sample_insertion_indeces["Date"],datetime.today().strftime("%H:%M:%S  %d %b %Y"))
 file_sample["Date"]="".join(file_sample["Date"])
 file_sample["Date"]=list(file_sample["Date"])
 file_sample_lengths["Date"]=len(file_sample["Date"])
-file_sample_insertion_indeces["Date"]=file_sample_lengths["Date"]-4
+file_sample_insertion_indeces["Date"]=file_sample_lengths["Date"]-3
 
 current_folder_name=os.path.basename(os.getcwd())
 
@@ -85,7 +85,7 @@ file_sample["Description"].insert(file_sample_insertion_indeces["Description"],c
 file_sample["Description"]="".join(file_sample["Description"])
 file_sample["Description"]=list(file_sample["Description"])
 file_sample_lengths["Description"]=len(file_sample["Description"])
-file_sample_insertion_indeces["Description"]=file_sample_lengths["Description"]-4
+file_sample_insertion_indeces["Description"]=file_sample_lengths["Description"]-3
 
 driver_c=copy.deepcopy(file_sample)
 driver_h=copy.deepcopy(file_sample)
